@@ -62,7 +62,7 @@ namespace Trivia
             this.Assent(output.ToString(), configuration);
         }
         [Fact]
-        public void PopQuestionShouldBeAddQuestion()
+        public void TestPopQuestionShouldBeAddQuestion()
         {
             var popQuestion = new PopQuestion();
             popQuestion.AddLastQuestion(1);
@@ -70,7 +70,7 @@ namespace Trivia
             Assert.Equal("Pop Question 1", popQuestion.First());
         }
         [Fact]
-        public void PopQuestionShouldBeRemoveQuestion()
+        public void TestPopQuestionShouldBeRemoveQuestion()
         {
             var popQuestion = new PopQuestion();
             popQuestion.AddLastQuestion(1);
@@ -78,6 +78,14 @@ namespace Trivia
             Assert.Equal("Pop Question 1", popQuestion.First());
             popQuestion.RemoveFirstQuestion();
             Assert.Throws<InvalidOperationException>(() => popQuestion.First());
+        }
+        [Fact]
+        public void TestAbstractClass()
+        {
+            Question popQuestion = new PopQuestion();
+            popQuestion.AddLastQuestion(1);
+            Assert.True(popQuestion is PopQuestion);
+            Assert.Equal("Pop Question 1",popQuestion.First());
         }
 
         private static Configuration BuildConfiguration()
