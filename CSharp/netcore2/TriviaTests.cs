@@ -5,6 +5,7 @@ using Xunit;
 using Assent;
 using Assent.Reporters;
 using Assent.Reporters.DiffPrograms;
+using trivia.Question;
 
 namespace Trivia
 {

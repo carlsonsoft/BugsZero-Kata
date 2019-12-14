@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-namespace Trivia
+
+namespace trivia.Question
 {
     public abstract class Question
     {
