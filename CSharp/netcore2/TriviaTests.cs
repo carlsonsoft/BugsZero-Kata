@@ -60,6 +60,24 @@ namespace Trivia
             var configuration = BuildConfiguration();
             this.Assent(output.ToString(), configuration);
         }
+        [Fact]
+        public void PopQuestionShouldBeAddQuestion()
+        {
+            var popQuestion = new PopQuestion();
+            popQuestion.AddLastQuestion(1);
+            Assert.NotNull(popQuestion.First());
+            Assert.Equal("Pop Question 1", popQuestion.First());
+        }
+        [Fact]
+        public void PopQuestionShouldBeRemoveQuestion()
+        {
+            var popQuestion = new PopQuestion();
+            popQuestion.AddLastQuestion(1);
+            Assert.NotNull(popQuestion.First());
+            Assert.Equal("Pop Question 1", popQuestion.First());
+            popQuestion.RemoveFirstQuestion();
+            Assert.Throws<InvalidOperationException>(() => popQuestion.First());
+        }
 
         private static Configuration BuildConfiguration()
         {
