@@ -33,10 +33,6 @@ namespace Trivia
             }
         }
 
-        public String CreateRockQuestion(int index)
-        {
-            return "Rock Question " + index;
-        }
 
         public bool IsPlayable()
         {
@@ -162,7 +158,6 @@ namespace Trivia
             if (currentPlayer == players.Count) currentPlayer = 0;
             return true;
         }
-
 
         private bool DidPlayerWin()
         {
